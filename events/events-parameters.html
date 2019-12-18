@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos-parametros</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup="changeInput">
+        <button @click="changeInputtwo(2)">Incrementar 2</button>
+        <input type="text" @keyup="changeInputThree(2, $event)">
+        {{count}}
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                count: 0
+            },
+            methods:{
+                changeInput: function(event){
+                    console.log(event.target.value)
+                },
+
+                changeInputtwo: function(value){
+                    this.count += value
+                },
+
+                changeInputThree (value, event) {
+                    value += parseInt(event.target.value)
+                    this.count += value
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>
