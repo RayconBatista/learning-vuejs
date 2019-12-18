@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>data-bind</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <p>Description</p>
+        <p> {{ isActive ? 'Ativo' : 'Não ativo'}}</p>
+        <a :href="url" :title="textYou"> {{ textYou }}</a>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                title: 'Meu titulo',
+                description: 'Sub Title',
+                isActive: false,
+                url: 'https:www.youtube.com',
+                textYou: 'youtube',
+            }
+        })
+    </script>
+</body>
+</html>
