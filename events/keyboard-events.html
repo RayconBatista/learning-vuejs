@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eventos do teclado com vueJs</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" 
+        @keyup.right="changeValue" 
+        @keyup.up="changeValueTwo"
+        @keyup="getCodeKey">
+
+        {{valueText}}
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                valueText: ''
+            },
+            methods: {
+                changeValue (event) {
+                    this.valueText = event.target.value
+                },
+
+                changeValueTwo () {
+                    alert('Lima?')
+                },
+
+                getCodeKey(event) {
+                    console.log(event.keyCode)
+                }
+            }
+        });
+    </script>
+</body>
+</html>
