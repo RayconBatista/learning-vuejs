@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        {{titulo}}
+        <h1>{{titulo}}</h1>
+        <p>Description</p>
+        <p> {{ isActive ? 'Ativo'}}</p>
     </div>
 
 
@@ -18,7 +20,9 @@
         new Vue({
             el:'#app',
             data:{
-                title: 'Meu titulo'
+                title: 'Meu titulo',
+                description: 'Sub Title',
+                isActive: true
             }
         })
     </script>
