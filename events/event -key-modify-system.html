@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos de teclas modificadoras de sistemas</title>
+</head>
+<body>
+    <div id="app">
+        <a :href="urlLink" @click.prevent="showAlert"> {{ textLink }} </a>
+        
+        <form action="#" method="post" @submit.prevent="showAlert">
+            <button type="submit">Enviar Formulários</button>
+
+            <button type="submit" @click.once="showAlert">Click me</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                textLink:'Alphart Design',
+                urlLink: 'https://www.facebook.com/alphartdesign'
+            },
+            methods:{
+                showAlert(event){
+                    // event.preventDefault()
+                    alert("Clicou no link");
+                }
+            }
+        })
+    </script>
+</body>
+</html>
