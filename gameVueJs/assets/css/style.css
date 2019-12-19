@@ -3,6 +3,27 @@
     padding: 0;
 }
 
+.fundo{
+    background-image: url("../../assets/outros/background21.jpg");
+}
+
+.title{
+    color: #daa520;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.controle{
+    margin-top: -5rem;
+    margin-bottom: 2.5em;
+}
+
+.mesa{
+    background-image: url("../../assets/outros/background21.jpg");
+    border-radius: 15px;
+    padding: 5px;
+}
+
 img{
     max-width: 100%;
 }
@@ -15,13 +36,9 @@ img.cart{
     max-width: 145px;
 }
 
-.title{
-    color: #999;
-    text-transform: uppercase;
-    margin: 30px 0;
-}
 
 .active img{
     background: green;
 }
+
 
