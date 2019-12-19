@@ -29,7 +29,7 @@
             <div class="controls col">
                 <a href="#" class="btn-success" @click.prevent="changePlayer">Pular</a>
                 <a href="#" class="btn-primary" @click.prevent="finishGame">Finalizar jogo</a>
-                <a href="" class="btn-danger">Resetar</a>
+                <a href="#" class="btn-danger" @click.prevent="resetGame">Resetar</a>
             </div>
         </div>
         <hr>
@@ -105,6 +105,19 @@
                     }
 
                     else('empate')
+
+                    let vm = this
+                    setTimeout(function () {
+                        vm.resetGame()
+                    }, 3000)
+                },
+
+                resetGame()
+                {
+                    this.playerOne.points = 0,
+                    this.playerTwo.points = 0,
+                    this.cartSelected = '',
+                    this.playerActived = 1
                 }
             }
         })
