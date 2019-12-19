@@ -38,6 +38,7 @@ img.cart{
 
 
 .active img{
+    border-radius: 20px;
     background: green;
 }
 
