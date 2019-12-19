@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>V-For VueJS</title>
+    <style>
+        .active{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="i in 10"> {{ i }}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="product in products"> {{ product }}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(task, index) in tasks" :class="{active : task.isActive}"> 
+              {{ index }} -> {{ task.id }} - {{ task.name }}</li>
+        </ul>
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                products:[
+                    'Tv', 'geladeira', 'Microondas', 'Rádio'
+                ],
+                tasks:[
+                    {id: 1, name: 'lava louça', isActive: true},
+                    {id: 2, name: 'lava carro', isActive: false},
+                    {id: 3, name: 'lava moto', isActive: true},
+                    {id: 4, name: 'lava banheiro', isActive: false},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
