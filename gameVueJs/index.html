@@ -12,20 +12,20 @@
 </head>
 <body>
 
-    <div class="container text-center">
+    <div id="app" class="container text-center">
         <h1 class="title">Jogo do 21 com VueJs</h1>
         <div class="row">
-            <div class="col-6 active">
+            <div :class="['col-6', playerActived == 1 ? 'active' : '']">
                 <img src="./assets/outros/player1.png" alt="player 1">
                 <p>Player 1</p>
             </div>
-            <div class="col-6">
+            <div :class="['col-6', playerActived == 2 ? 'active' : '']">
                 <img src="./assets/outros/player2.png" alt="player 2">
                 <p>Player 2</p>
             </div>
 
             <div class="controls col">
-                <a href="" class="btn-success">Pular</a>
+                <a href="#" class="btn-success" @click.prevent="changePlayer">Pular</a>
                 <a href="" class="btn-primary">Finalizar jogo</a>
                 <a href="" class="btn-danger">Resetar</a>
             </div>
@@ -47,7 +47,12 @@
         new Vue({
             el: '#app',
             data:{
-
+                playerActived: 1
+            },
+            methods:{
+                changePlayer(){
+                    this.playerActived = this.playerActived == 1 ? 2 : 1
+                }
             }
         })
     </script>
