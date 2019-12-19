@@ -17,7 +17,11 @@
             <h1 class="title">Jogo do 21 com VueJs</h1>
         </div>
         <div class="row mt-2">
-            <div :class="['col-6', playerActived == 1 ? 'active' : '']">
+            <div class="col-md-2">
+                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerOne.points >= 21">
+                <span v-show="playerOne.points >= 21">Campeão</span>
+            </div>
+            <div :class="['col-md-4', playerActived == 1 ? 'active' : '']">
                 <img src="./assets/outros/player1.png" alt="player 1">
                 <p>
                     Player 1
@@ -25,7 +29,7 @@
                 </p>
                 <p><strong>Pontos: </strong> {{ playerOne.points }}</p>
             </div>
-            <div :class="['col-6', playerActived == 2 ? 'active' : '']">
+            <div :class="['col-md-4', playerActived == 2 ? 'active' : '']">
                 <img src="./assets/outros/player2.png" alt="player 2">
                 <p>
                     Player 2
@@ -35,19 +39,26 @@
 
             </div>
 
-            <div class="controls col controle">
+            <div class="col-md-2">
+                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerTwo.points >= 21">
+                <span v-show="playerTwo.points >= 21">Campeão</span>
+            </div>
+
+
+        </div>
+        <div class="row" style="background: #2aabd2">
+            <div class="controls col" style="text-align: center">
                 <a href="#" class="btn-success" @click.prevent="changePlayer">Pular</a>
                 <a href="#" class="btn-primary" @click.prevent="finishGame">Finalizar jogo</a>
                 <a href="#" class="btn-danger" @click.prevent="resetGame">Resetar</a>
             </div>
         </div>
-
         <hr>
 
         <div class="mesa">
             <div class="row m-2">
                 <div class="col-6">
-                    <a href=""  @click.prevent="selectedCart">
+                    <a href="" @click.prevent="selectedCart">
                         <img src="./assets/outros/baralho-cartas.png" alt="baralho" class="carts">
                     </a>
                 </div>
@@ -165,7 +176,9 @@
                 {
                     return this.playerTwo.historic.length
                 }
-            }
+            },
+
+
         })
     </script>
 </body>
