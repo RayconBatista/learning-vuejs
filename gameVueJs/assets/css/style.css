@@ -21,8 +21,17 @@
 .mesa{
     background-image: url("../../assets/outros/background21.jpg");
     border-radius: 15px;
-    padding: 5px;
+    padding: 40px;
 }
+
+.borderCartas{
+    width: 200px;
+    height: 270px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 15px solid antiquewhite;
+}
+
 
 img{
     max-width: 100%;
@@ -33,6 +42,7 @@ img.carts{
 }
 
 img.cart{
+    margin: 15px 15px 10px -4px;
     max-width: 145px;
 }
 

@@ -50,9 +50,11 @@
                         <img src="./assets/outros/baralho-cartas.png" alt="baralho" class="carts">
                     </a>
                 </div>
-                <div class="col-6">
-                    <div v-if="cartSelected != '' ">
-                        <img :src="'./assets/carts/' + cartSelected + '.png'" alt="carta" class="cart">
+                <div class="borderCartas">
+                    <div class="col-6">
+                        <div v-if="cartSelected != '' ">
+                            <img :src="'./assets/carts/' + cartSelected + '.png'" alt="carta" class="cart">
+                        </div>
                     </div>
                 </div>
             </div>
