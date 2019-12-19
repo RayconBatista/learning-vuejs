@@ -15,7 +15,7 @@
         };
 
         .default{
-            color: yellow;
+            color: purple;
         }
     </style>
 </head>
@@ -30,15 +30,15 @@
 
         </div>
 
-        <div :class="isActive ? 'active' : 'no-active' ">
+        <div :class="isActive ? 'active' : 'no-active'">
             Exemplo style 2
 
         </div>
 
-        <!-- <div :class="default ? 'active' : 'no-active' ">
+        <div class="default" :class="isActive ? 'active' : 'no-active' ">
             Exemplo style 3
 
-        </div> -->
+        </div>
         <div :class="['default', isActive ? 'active' : 'no-active']">
             Exemplo 3/2
 
