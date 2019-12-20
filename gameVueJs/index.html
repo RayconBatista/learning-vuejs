@@ -18,8 +18,8 @@
         </div>
         <div class="row mt-2">
             <div class="col-md-2">
-                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerOne.points >= 21">
-                <span v-show="playerOne.points >= 21">Campeão</span>
+                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerTwo.points > 21">
+                <span v-show="playerTwo.points > 21">Campeão</span>
             </div>
             <div :class="['col-md-4', playerActived == 1 ? 'active' : '']">
                 <img src="./assets/outros/player1.png" alt="player 1">
@@ -40,8 +40,8 @@
             </div>
 
             <div class="col-md-2">
-                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerTwo.points >= 21">
-                <span v-show="playerTwo.points >= 21">Campeão</span>
+                <img src="./assets/outros/trofeu.png" height="100" alt="trofeu" v-show="playerOne.points > 21">
+                <span v-show="playerOne.points > 21">Campeão</span>
             </div>
 
 
@@ -81,10 +81,12 @@
             data:{
                 playerActived: 1,
                 playerOne: {
+                    isWinner : false,
                     points: 0,
                     historic: [],
                 },
                 playerTwo: {
+                    isWinner : false,
                     points: 0,
                     historic: [],
                 },
@@ -122,26 +124,36 @@
                 {
                     if(this.playerOne.points <= 21 && this.playerOne.points > this.playerTwo.points)
                     {
+                        this.playerOne.isWinner = true;
+                        this.playerTwo.isWinner = false;
                         alert('Player 1 Campeão')
                     }
 
                     else if(this.playerTwo.points <= 21 && this.playerTwo.points > this.playerOne.points)
                     {
+                        this.playerOne.isWinner = true;
+                        this.playerTwo.isWinner = false;
                         alert('Player 2 Campeão')
                     }
 
                     else if (this.playerOne.points > 21)
                     {
+                        this.playerOne.isWinner = true;
+                        this.playerTwo.isWinner = false;
                         alert('player 2 campeão')
                     }
 
                     else if (this.playerTwo.points > 21)
                     {
+                        this.playerOne.isWinner = true;
+                        this.playerTwo.isWinner = false;
                         alert('player 1 campeão')
                     }
 
                     else if(this.playerOne.points == 21)
                     {
+                        this.playerOne.isWinner = true;
+                        this.playerTwo.isWinner = false;
                         alert('player 1 campeão')
                     }
 
